@@ -1,0 +1,31 @@
+{
+  "name": "kyra_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dschear94/kyra-dev-task-ds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dschear94/kyra-dev-task-ds/issues"
+  },
+  "homepage": "https://github.com/dschear94/kyra-dev-task-ds#readme",
+  "dependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/preset-react": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
