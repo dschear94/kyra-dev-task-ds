@@ -1,0 +1,1 @@
+<%= javascript_include_tag "https://www.googleapis.com/youtube/v3/api/js?key=#{ENV['YOUTUBE_DATA_API_KEY']}" %>

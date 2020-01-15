@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,7 @@
     "@babel/preset-env": "^7.8.2",
     "@babel/preset-react": "^7.8.0",
     "babel-loader": "^8.0.6",
+    "gapi-script": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "webpack": "^4.41.5",
