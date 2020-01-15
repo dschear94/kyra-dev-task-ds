@@ -1,6 +1,6 @@
 import React from 'react';
-import { gapi } from 'gapi-script';
-// import 
+// import { gapi } from 'gapi-script';
+import {gapiLoadAndFetch} from '../../util/google_api_util'
 
 class VideoIndex extends React.Component {
     constructor(props) {
@@ -8,34 +8,20 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        // this.gapiAuth();
     }
-
+    
     gapiAuth() {
-        // gapi
+        gapiLoadAndFetch();
     }
 
     fetchVideos() {
-
-        // const requestOptions = {
-        //     playlistId: "UUvO6uJUVJQ6SrATfsWR5_aA",
-        //     part: 'snippet',
-        // };
-
-        // const request = gapi.client.youtube.playlistItems.list(requestOptions);
-
-        // request.execute(response => {
-        //     console.log(response);
-        // });
-
     }
 
     render() {
         return (
             <div>
                 <h1>PAQ Video Index</h1>
-                <button onClick={this.gapiAuth()}>Authenticate</button>
-                <button onClick={this.fetchVideos()}>Refresh List</button>
+                <button onClick={this.gapiAuth}>Refresh List</button>
             </div>
         );
     }
