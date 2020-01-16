@@ -1,13 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
 import VideoIndexContainer from './video_index/video_index_container';
 
 const Root = ({ store }) => (
     <Provider store={store}>
-        <HashRouter>
-            <VideoIndexContainer />
-        </HashRouter>
+        <VideoIndexContainer />
     </Provider>
 );
 
