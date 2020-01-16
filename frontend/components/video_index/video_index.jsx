@@ -48,6 +48,9 @@ class VideoIndex extends React.Component {
                     <p>
                         Last Refresh: {this.state.time}
                     </p>
+                    <p>
+                        Video Count: {videos.length}
+                    </p>
                 <ul>
                     {output}
                 </ul>
