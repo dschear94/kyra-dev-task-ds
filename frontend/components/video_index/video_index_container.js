@@ -6,7 +6,6 @@ import {
 import { clientLoad } from '../../util/google_api_util'
 
 const msp = (state) => {
-    // debugger
     return {
         videos: state.entities.videos,
         token: state.entities.token
