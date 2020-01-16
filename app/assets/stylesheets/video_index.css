@@ -1,9 +1,12 @@
 h1 {
     font-size: 32px;
     color: #a52421;
-    margin-bottom: 30px;
     margin-top: 15px;
     cursor: pointer;
+}
+
+p {
+    margin-bottom: 30px;
 }
 
 h1:hover {
@@ -49,4 +52,15 @@ div {
 .vidTitle {
     font-family: sans-serif;
     margin-bottom: 5px;
+    font-size: 20px;
+    display: inline-block;
+    /* cursor: pointer; */
 }
+
+.vidTitle:hover {
+    color: #a52421;
+}
+/* 
+a {
+    cursor: auto;
+} */

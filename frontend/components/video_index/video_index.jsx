@@ -6,6 +6,10 @@ class VideoIndex extends React.Component {
         super(props);
 
         this.fetchVideos = this.fetchVideos.bind(this);
+
+        this.state = {
+            time: new Date(Date.now()).toString()
+        }
     }
 
     componentDidMount() {
@@ -23,6 +27,9 @@ class VideoIndex extends React.Component {
     }
 
     fetchVideos() {
+        this.setState({
+            time: new Date(Date.now()).toString()
+        })
         return this.props.fetchVideos();
     }
 
@@ -36,8 +43,11 @@ class VideoIndex extends React.Component {
         return (
             <div className="index">
                 <div className="header">
-                    <h1 onClick={this.fetchVideos} title="Click to Refresh">PAQ Video List </h1>
+                    <h1 onClick={this.fetchVideos} title="Click to Refresh">PAQ Videos</h1>
                 </div>
+                    <p>
+                        Last Refresh: {this.state.time}
+                    </p>
                 <ul>
                     {output}
                 </ul>
