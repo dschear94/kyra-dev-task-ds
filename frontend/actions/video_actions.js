@@ -10,9 +10,6 @@ export const receiveVideos = (videos) => {
 };
 
 export const fetchVideos = (token) => dispatch => {
-    // return APIUtil.fetchVideos().then(videos => (
-    //     dispatch(receiveVideos(videos))
-    // ));
     return APIUtil.ajaxFetch(token).then(videos => {
         (dispatch(receiveVideos(videos)))
     })

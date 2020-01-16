@@ -21,9 +21,6 @@ class VideoIndex extends React.Component {
         }
         
     }
-    
-    gapiAuth() {
-    }
 
     fetchVideos() {
         return this.props.fetchVideos();
@@ -38,11 +35,10 @@ class VideoIndex extends React.Component {
 
         return (
             <div className="index">
-                <h1>PAQ Video Index</h1>
+                <div className="header">
+                    <h1 onClick={this.fetchVideos} title="Click to Refresh">PAQ Video List </h1>
+                </div>
                 <ul>
-                    <div>
-                        <button onClick={this.fetchVideos}>Refresh List</button>
-                    </div>
                     {output}
                 </ul>
             </div>

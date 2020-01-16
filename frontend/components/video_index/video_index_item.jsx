@@ -5,17 +5,15 @@ class VideoIndexItem extends React.Component {
         super(props);
     }
 
-    handleClick() {
-
-    }
-
     render() {
         const { item } = this.props;
         return (
             <li >
-                <div>{item.snippet.title}</div>
                 <div className="imageContainer">
-                    <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.description}/>
+                    <a href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`} target='_blank'>
+                        <div className="vidTitle">{item.snippet.title}</div>
+                        <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.description}/>
+                    </a>
                 </div>
             </li >
         );
