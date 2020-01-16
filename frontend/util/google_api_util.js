@@ -1,17 +1,6 @@
-// export const gapiAuth = () => {
-//     gapi.load("client", () => {
+export const fetchVideos = (pageToken = "", results = []) => {
 
-//         gapi.client.setApiKey(ENV["YOUTUBE_DATA_API_KEY"]);
-        
-//         return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-//             .then(function () { console.log("GAPI client loaded for API"); },
-//                 function (err) { console.error("Error loading GAPI client for API", err); });
-//     })
-// };
-
-function apiParams(pageToken="") {
-
-    console.log("GAPI client loaded for API");
+    
 
     const requestOptions = {
         playlistId: "UUvO6uJUVJQ6SrATfsWR5_aA",
@@ -20,25 +9,36 @@ function apiParams(pageToken="") {
         pageToken: pageToken,
     };
 
+    // debugger
+
     const request = gapi.client.youtube.playlistItems.list(requestOptions);
 
     request.execute(response => {
-        console.log(response);
-        if (response.nextPageToken) return apiParams(response.nextPageToken);
+        results = results.concat(response.items);
+        if (response.nextPageToken) {
+            fetchVideos(response.nextPageToken, results);  
+        } else {
+            {results};
+        }
     });
 }
 
-export const gapiLoadAndFetch = () => {
-    debugger
+export const clientLoad = () => {
     gapi.load("client", () => {
 
-        gapi.client.setApiKey(ENV['YOUTUBE_DATA_API_KEY']);
+        gapi.client.setApiKey(window.access['apikey']);
 
         return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-            .then(apiParams(), function (err) { console.error("Error loading GAPI client for API", err); });
+            .then(console.log("GAPI client loaded for API"), function (err) { console.error("Error loading GAPI client for API", err); });
     })
 }
 
+export const ajaxFetch = (token) => {
+    return $.ajax({
+        method: 'GET',
+        url: `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=50&pageToken=${token}&part=snippet&playlistId=UUvO6uJUVJQ6SrATfsWR5_aA&key=${window.access['apikey']}`
+    });
+}
 
 // ^^^^^^^^^^^^ working code
 

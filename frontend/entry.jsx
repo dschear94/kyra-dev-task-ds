@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import VideoIndex from './components/video_index/video_index';
+import configureStore from './store/store';
+import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
+    const store = configureStore();
     const root = document.getElementById("yo");
-    ReactDOM.render(<VideoIndex/>, root);
+    ReactDOM.render(<Root store={store}/>, root);
 });
