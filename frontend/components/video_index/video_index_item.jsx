@@ -7,11 +7,18 @@ class VideoIndexItem extends React.Component {
         super(props);
     }
 
+    handleClick() {
+
+    }
+
     render() {
-        const videoId = this.props.item.snippet.resourceId.videoId;
+        const { item } = this.props;
+        const videoId = item.snippet.resourceId.videoId;
         return (
             <li >
-                <iframe width="100%" height="auto" src={`https://www.youtube.com/embed/${videoId}`} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                {/* <iframe width="50px" height="auto" src={`https://www.youtube.com/embed/${videoId}`}></iframe> */}
+                <div>{item.snippet.title}</div>
+                <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.description}/>
             </li >
         );
     }

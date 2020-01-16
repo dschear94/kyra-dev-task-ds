@@ -18,6 +18,7 @@ class VideoIndex extends React.Component {
     componentDidMount() {
         // this.props = gapiLoadAndFetch();
         // console.log(this.props);
+        this.props.clientLoad();
     }
 
     componentDidUpdate(prevProps) {
@@ -46,7 +47,7 @@ class VideoIndex extends React.Component {
         //     })}
         // </ul>);
         let output = videos.map(item => 
-                <VideoIndexItem item={item}/>
+            <VideoIndexItem key={item.snippet.resourceId.videoId} item={item}/>
         );
 
 
@@ -54,7 +55,7 @@ class VideoIndex extends React.Component {
             <div>
                 <h1>PAQ Video Index</h1>
                 <button onClick={this.fetchVideos}>Refresh List</button>
-                <button onClick={this.props.clientLoad}>Client Load</button>
+                {/* <button onClick={this.props.clientLoad}>Client Load</button> */}
                 <ul>
                     {output}
                 </ul>
