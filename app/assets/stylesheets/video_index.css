@@ -66,7 +66,35 @@ div {
 ul {
     margin-top: 30px;
 }
-/* 
-a {
-    cursor: auto;
-} */
+
+.graphTitle {
+    font-size: 40px;
+    color: #a52421;
+    margin-top: 15px;
+}
+
+.graphTitle2 {
+    font-size: 20px;
+    color: #a52421;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.chartContainer {
+    /* display: inline-block; */
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.vidLink {
+    margin-bottom: 20px;
+}
+
+.vidLink:hover {
+    color: #a52421;
+}
+
+.header2 {
+    margin-bottom: 0;
+}

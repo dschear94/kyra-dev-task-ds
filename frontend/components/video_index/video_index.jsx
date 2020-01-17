@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoIndexItem from './video_index_item'
+import { Link } from 'react-router-dom';
 
 class VideoIndex extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class VideoIndex extends React.Component {
         return (
             <div className="index">
                 <div className="header">
-                    <h1 onClick={this.fetchVideos} title="Click to Refresh">PAQ Videos</h1>
+                    <h1 className="header2" onClick={this.fetchVideos} title="Click to Refresh">PAQ Videos</h1>
                 </div>
                     <p>
                         Last Refresh: {this.state.time}
@@ -51,6 +52,9 @@ class VideoIndex extends React.Component {
                     <p>
                         Video Count: {videos.length}
                     </p>
+                    <div className="vidLink">
+                        <Link to="/graph">Graph</Link>
+                    </div>
                 <ul>
                     {output}
                 </ul>
