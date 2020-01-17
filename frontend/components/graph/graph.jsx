@@ -73,7 +73,7 @@ class Graph extends React.Component {
             <div className="index">
                 <div className="header2">
                     <h1 onClick={this.fetchVideos} title="Click to Refresh">
-                        Videos Uploaded
+                        Graph: Videos Uploaded
                     </h1>
                 </div>
                         <div className="graphTitle2">
